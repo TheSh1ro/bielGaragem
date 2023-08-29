@@ -13,30 +13,6 @@ from garagem.serializers import (
 )
 
 
-class AcessorioViewSet(ModelViewSet):
-    queryset = Acessorio.objects.all()
-    serializer_class = AcessorioSerializer
-
-
-class CategoriaViewSet(ModelViewSet):
-    queryset = Categoria.objects.all()
-    serializer_class = CategoriaSerializer
-
-
-class CorViewSet(ModelViewSet):
-    queryset = Cor.objects.all()
-    serializer_class = CorSerializer
-
-
-class MarcaViewSet(ModelViewSet):
-    queryset = Marca.objects.all()
-    serializer_class = MarcaSerializer
-
-
-class ModeloViewSet(ModelViewSet):
-    queryset = Modelo.objects.all()
-    serializer_class = ModeloSerializer
-
 class VeiculoViewSet(ModelViewSet):
     queryset = Veiculo.objects.all()
     serializer_class = VeiculoSerializer
@@ -47,4 +23,3 @@ class VeiculoViewSet(ModelViewSet):
         elif self.action == "retrieve":
             return VeiculoDetailSerializer
         return VeiculoSerializer
-

@@ -1,7 +1,7 @@
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
-    "black>=23.3.0",
+    "black>=23.7.0",
     "isort>=5.12.0",
 ]
 
@@ -13,8 +13,30 @@ authors = [
     {name = "thesh1ro", email = "gabrielmonteiro1111@gmail.com"},
 ]
 dependencies = [
-    "django>=4.2.1",
+    "django>=4.2.4",
     "djangorestframework>=3.14.0",
+    "django-extensions>=3.2.3",
+    "pydotplus>=2.0.2",
+    "setuptools>=68.1.2",
 ]
 requires-python = ">=3.10"
 license = {text = "MIT"}
+
+[tool.black]
+line-length = 120
+
+[[tool.pdm.autoexport]]
+filename = "requirements.txt"
+without-hashes = "true"
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver"
+runserver = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+shell = "python manage.py shell"
+test = "python manage.py test"
+startapp = "python manage.py startapp {args}"
+loaddata = "python manage.py loaddata {args}"
+dumpdata = "python manage.py dumpdata {args}"

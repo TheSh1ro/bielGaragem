@@ -12,6 +12,17 @@ from garagem.views import (
     VeiculoViewSet,
 )
 
+...
+from usuario.router import router as usuario_router
+
+...
+
+urlpatterns = [
+    ...
+    path("api/", include(usuario_router.urls)),
+]
+
+
 router = DefaultRouter()
 router.register(r"acessorios", AcessorioViewSet)
 router.register(r"categorias", CategoriaViewSet)
